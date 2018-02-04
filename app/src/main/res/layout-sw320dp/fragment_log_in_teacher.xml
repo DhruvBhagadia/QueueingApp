@@ -25,7 +25,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:fontFamily="monospace"
-        android:text="@string/welcome"
+        android:text="@string/welcome_back_user"
         android:textColor="#fff"
         android:textSize="20sp"/>
 

@@ -18,16 +18,18 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".activity.MainActivity">
-    </activity>
     <activity
-      android:name=".activity.LogInActivity"
+      android:name=".activity.MainActivity"
       android:theme="@style/MyTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
+    </activity>
+    <activity
+      android:name=".activity.LogInActivity"
+      android:theme="@style/MyTheme">
     </activity>
     <activity android:name=".activity.StudentScreenActivity">
     </activity>
@@ -41,11 +43,15 @@
     </activity>
     <activity android:name=".activity.StudentListActivity">
     </activity>
-    <activity android:name=".activity.TeacherProfileActivity"
+    <activity
+      android:name=".activity.TeacherProfileActivity"
       android:theme="@style/MyTheme">
     </activity>
-    <activity android:name=".activity.timeTableActivity"
+    <activity
+      android:name=".activity.timeTableActivity"
       android:theme="@style/MyTheme">
+    </activity>
+    <activity android:name=".activity.EmailActivity">
     </activity>
   </application>
 

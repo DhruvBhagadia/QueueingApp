@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="16dp"
+  tools:context="com.djunicode.queuingapp.activity.EmailActivity">
+
+  <android.support.design.widget.TextInputLayout
+    android:id="@+id/signUpEmailTIL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColorHint="#bab5b5"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center_horizontal">
+
+    <EditText
+      android:id="@+id/signUpEmailEditText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:hint="@string/enter_your_e_mail"
+      android:inputType="textEmailAddress"/>
+
+  </android.support.design.widget.TextInputLayout>
+
+  <android.support.design.widget.TextInputLayout
+    android:id="@+id/verifyTIL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColorHint="#bab5b5"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_below="@+id/signUpEmailTIL">
+
+    <EditText
+      android:id="@+id/verifyEditText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:hint="@string/enter_the_code"
+      android:inputType="numberDecimal"/>
+
+  </android.support.design.widget.TextInputLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_below="@+id/verifyTIL"
+    android:weightSum="2">
+
+    <Button
+      android:id="@+id/sendCodeButton"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="@string/send_code"
+      android:theme="@style/AppTheme.Button"
+      android:layout_weight="1"/>
+
+    <Button
+      android:id="@+id/verifyEmailButton"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="@string/verify_email"
+      android:theme="@style/AppTheme.Button"/>
+
+  </LinearLayout>
+
+</RelativeLayout>

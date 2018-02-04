@@ -94,5 +94,10 @@
   <string name="create_new">Create new</string>
   <string name="delete">Delete</string>
   <string name="edit">Edit</string>
+  <string name="enter_your_e_mail">Enter your E-mail</string>
+  <string name="enter_the_code">Enter the code</string>
+  <string name="send_code">Send Code</string>
+  <string name="verify_email">Verify Email</string>
+  <string name="welcome_back_user">WELCOME BACK USER!</string>
 
 </resources>

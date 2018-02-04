@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:id="@+id/containerFrame"
+  android:background="@drawable/login_bg"
+  android:padding="10dp"
+  tools:context="com.djunicode.queuingapp.fragment.SignUpStudentFragment">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/signUp_student_username"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColorHint="#bab5b5"
+          android:layout_marginTop="20dp"
+          android:layout_gravity="center_horizontal">
+
+          <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_person"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:textColor="#fff"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/signUp_student_department"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <Spinner
+            android:id="@+id/departmentSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:entries="@array/dept_array"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/signUp_student_year"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <Spinner
+            android:id="@+id/yearSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:entries="@array/year_array"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/batchTextInputLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <Spinner
+            android:id="@+id/batchSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:entries="@array/batch_array"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/signUp_student_SAPId"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:textColorHint="#bab5b5"
+          android:layout_gravity="center_horizontal">
+
+          <EditText
+            android:id="@+id/sapIDEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_sap"
+            android:ems="10"
+            android:hint="@string/sap_id"
+            android:inputType="numberDecimal"
+            android:textColor="#fff"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+          android:id="@+id/signUp_student_password"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:textColorHint="#bab5b5"
+          android:layout_gravity="center_horizontal">
+
+          <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_lock"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="#fff"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+      </LinearLayout>
+
+      <android.support.v7.widget.CardView
+        android:id="@+id/signUpStudentButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorAccent"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:padding="10dp"
+          android:drawableEnd="@drawable/ic_send"
+          android:gravity="center"
+          android:text="@string/sign_up_as_student"
+          android:textColor="#fff"
+          android:textSize="20sp"/>
+
+      </android.support.v7.widget.CardView>
+
+      <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="10dp"
+          android:layout_gravity="center_horizontal"
+          android:orientation="horizontal">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/already_a_member"
+            android:textColor="#bab5b5"
+            android:textSize="15sp"/>
+
+          <TextView
+            android:id="@+id/logInStudentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/log_in"
+            android:textColor="#fff"
+            android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_gravity="center_horizontal"
+          android:orientation="horizontal">
+
+          <View
+            android:layout_width="@dimen/horizontal_line"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:background="#bab5b5"/>
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/or"
+            android:textColor="#bab5b5"
+            android:textSize="15sp"/>
+
+          <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:background="#bab5b5"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:padding="10dp"
+          android:layout_gravity="center_horizontal"
+          android:orientation="horizontal">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/i_am_a_teacher"
+            android:textColor="#bab5b5"
+            android:textSize="15sp"/>
+
+          <TextView
+            android:id="@+id/logInTeacherTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/log_in"
+            android:textSize="15sp"
+            android:textColor="#fff"/>
+
+          <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="#fff"/>
+
+          <TextView
+            android:id="@+id/signUpTeacherTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/sign_up"
+            android:textSize="15sp"
+            android:textColor="#fff"/>
+
+        </LinearLayout>
+
+      </LinearLayout>-->
+
+    </LinearLayout>
+
+  </ScrollView>
+
+</FrameLayout>
