@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <dimen name="welcome">20sp</dimen>
+  <dimen name="horizontal_line">150dp</dimen>
+  <dimen name="standard_65">65dp</dimen>
+  <dimen name="standard_115">115dp</dimen>
+  <dimen name="standard_165">165dp</dimen>
+  <dimen name="standard_215">215dp</dimen>
+</resources>

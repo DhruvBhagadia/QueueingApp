@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:id="@+id/bottomLinearLayout"
+  android:paddingStart="10dp"
+  android:paddingEnd="10dp"
+  android:orientation="vertical"
+  android:background="@android:color/white">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Time : "
+      android:textSize="20sp"
+      android:textStyle="bold"
+      android:fontFamily="sans-serif-smallcaps"/>
+
+    <TextView
+      android:id="@+id/timeBottom"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="20sp"
+      android:fontFamily="sans-serif-smallcaps"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/batch"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      android:fontFamily="sans-serif-smallcaps"/>
+
+    <TextView
+      android:id="@+id/batchNameBottom"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="20sp"
+      android:fontFamily="sans-serif-smallcaps"/>
+
+  </LinearLayout>
+
+</LinearLayout>

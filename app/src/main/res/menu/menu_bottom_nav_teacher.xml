@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/action_submission_teacher"
+    android:title="@string/submission"
+    android:icon="@drawable/ic_submission"/>
+
+  <item android:id="@+id/action_location"
+    android:title="@string/my_location"
+    android:icon="@drawable/ic_location_teacher"/>
+
+  <item android:id="@+id/action_recents"
+    android:title="@string/recent"
+    android:icon="@drawable/ic_time"/>
+</menu>

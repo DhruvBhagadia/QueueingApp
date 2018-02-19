@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <RelativeLayout
+    android:id="@+id/backgroundView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <ImageView
+      android:id="@+id/deleteIcon"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_alignParentEnd="true"
+      android:layout_centerVertical="true"
+      android:layout_marginEnd="10dp"
+      android:src="@drawable/ic_delete"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_marginEnd="10dp"
+      android:layout_toStartOf="@id/deleteIcon"
+      android:text="@string/delete"
+      android:textColor="#fff"
+      android:textSize="20sp"
+      android:fontFamily="sans-serif-smallcaps"/>
+
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:id="@+id/foregroundView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="5dp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="10dp"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:text="Subject : "
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+        <TextView
+          android:id="@+id/subjectName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:text="Batch : "
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+        <TextView
+          android:id="@+id/batchName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:text="From : "
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+        <TextView
+          android:id="@+id/startTime"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:text="To : "
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+        <TextView
+          android:id="@+id/endTime"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:text="Location :"
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+        <TextView
+          android:id="@+id/location"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-smallcaps"
+          android:textColor="@android:color/background_dark"
+          android:textSize="20sp"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </RelativeLayout>
+
+</FrameLayout>

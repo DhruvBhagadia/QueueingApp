@@ -1,0 +1,103 @@
+<resources>
+  <string name="app_name">Queuing App</string>
+  <string name="welcome">WELCOME TO QUEUEING APP!</string>
+  <string name="username">USERNAME</string>
+  <string name="sap_id">SAP ID</string>
+  <string name="password">PASSWORD</string>
+  <string name="log_in_as_student">LOG IN AS STUDENT</string>
+  <string name="or">OR</string>
+  <string name="sign_up_as_student">SIGN UP AS STUDENT</string>
+  <string name="already_a_member">Already a member?</string>
+  <string name="log_in">Log In</string>
+  <string name="i_am_a_teacher">I am a Teacher.</string>
+  <string name="sign_up">Sign Up</string>
+  <string name="sign_up_as_teacher">SIGN UP AS TEACHER</string>
+  <string name="log_in_as_teacher">LOG IN AS TEACHER</string>
+  <string name="submission">Submission</string>
+  <string name="subscriptions">Subscriptions</string>
+  <string name="find_a_teacher">Find a Teacher</string>
+  <string name="which_submission_do_you_have">Which submission do you have?</string>
+  <string name="err_msg_username">Enter a username</string>
+  <string name="err_msg_username_inappropriate_length">Username should be at least 5 characters</string>
+  <string name="err_msg_SAPId">Enter valid SAPId</string>
+  <string name="err_msg_SAPId_inappropriate_length">SAPID has 11 digits</string>
+  <string name="err_msg_password">Enter the password</string>
+  <string name="err_msg_password_inappropriate_length">Password should be at least 5 characters</string>
+  <string name="err_msg_username_password_dont_match">Username and password does not match</string>
+  <string name="err_msg_batch">Enter your batch</string>
+  <string name="err_msg_department">Enter your department</string>
+  <string name="err_msg_year">Enter your year</string>
+
+
+  <string-array name="dept_array">
+    <item>SELECT DEPARTMENT</item>
+    <item>COMPUTER</item>
+    <item>IT</item>
+    <item>MECHANICAL</item>
+    <item>PRODUCTION</item>
+    <item>CHEMICAL</item>
+    <item>ELECTRONICS</item>
+    <item>EXTC</item>
+    <item>BIO-MEDICAL</item>
+  </string-array>
+
+  <string-array name="year_array">
+    <item>SELECT YEAR</item>
+    <item>FE</item>
+    <item>SE</item>
+    <item>TE</item>
+    <item>BE</item>
+  </string-array>
+
+  <string-array name="batch_array">
+    <item>SELECT BATCH</item>
+    <item>A1</item>
+    <item>A2</item>
+    <item>A3</item>
+    <item>A4</item>
+    <item>B1</item>
+    <item>B2</item>
+    <item>B3</item>
+    <item>B4</item>
+  </string-array>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="semester">Semester</string>
+  <string name="subject">Subject</string>
+  <string name="teacher">Teacher</string>
+  <string name="find_teacher">FIND TEACHER</string>
+  <string name="sighted_a_teacher">SIGHTED A TEACHER</string>
+  <string name="location">Location :</string>
+  <string name="from">From :</string>
+  <string name="to">To :</string>
+  <string name="batch">Batch :</string>
+  <string name="join">JOIN</string>
+  <string name="your_position_in_the_queue_is">YOUR POSITION IN THE QUEUE IS</string>
+  <string name="i_am_done">I AM DONE</string>
+  <string name="department">Department</string>
+  <string name="room">Room</string>
+  <string name="update_teacher_location">Update Teacher Location</string>
+  <string name="my_profile">My Profile</string>
+  <string name="my_location">My Location</string>
+  <string name="restriction">Restriction</string>
+  <string name="time">Time</string>
+  <string name="students">Students</string>
+  <string name="floor">Floor</string>
+  <string name="cancel">Cancel</string>
+  <string name="start">Start</string>
+  <string name="students_in_the_queue">STUDENTS IN THE QUEUE</string>
+  <string name="recent">Recent</string>
+  <string name="submissions">Submissions</string>
+  <string name="subscribers">Subscribers</string>
+  <string name="time_table">Time-Table</string>
+  <string name="create_new">Create new</string>
+  <string name="delete">Delete</string>
+  <string name="edit">Edit</string>
+  <string name="enter_your_e_mail">Enter your E-mail</string>
+  <string name="enter_the_code">Enter the code</string>
+  <string name="send_code">Send Code</string>
+  <string name="verify_email">Verify Email</string>
+  <string name="welcome_back_user">WELCOME BACK USER!</string>
+
+</resources>

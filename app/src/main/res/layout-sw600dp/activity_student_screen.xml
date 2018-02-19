@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.djunicode.queuingapp.activity.StudentScreenActivity">
+
+  <android.support.design.widget.AppBarLayout
+    android:id="@+id/appBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+    <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:title="@string/app_name"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+  </android.support.design.widget.AppBarLayout>
+
+  <FrameLayout
+    android:id="@+id/containerLayout"
+    android:layout_below="@id/appBarLayout"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"/>
+
+  <android.support.design.widget.BottomNavigationView
+    android:id="@+id/bottomNavigationView"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_alignParentBottom="true"
+    app:menu="@menu/menu_bottom_nav"
+    android:background="@android:color/white"
+    android:elevation="8dp"/>
+
+</RelativeLayout>

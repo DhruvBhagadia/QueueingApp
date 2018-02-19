@@ -1,0 +1,128 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:background="@drawable/login_bg"
+  android:orientation="vertical"
+  android:padding="10dp"
+  tools:context="com.djunicode.queuingapp.fragment.SignUpTeacherFragment">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:orientation="vertical">
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_teacher_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:textColorHint="#bab5b5">
+
+        <EditText
+          android:id="@+id/usernameTeacherEditText"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:drawablePadding="10dp"
+          android:drawableStart="@drawable/ic_person"
+          android:ems="10"
+          android:hint="@string/username"
+          android:inputType="textPersonName"
+          android:textColor="#fff"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_teacher_Department"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"><Spinner
+        android:id="@+id/departmentTeacherSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:entries="@array/dept_array"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"/>
+      </android.support.design.widget.TextInputLayout>
+
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_teacher_SAPId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textColorHint="#bab5b5">
+
+        <EditText
+          android:id="@+id/sapIDTeacherEditText"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:drawablePadding="10dp"
+          android:drawableStart="@drawable/ic_sap"
+          android:ems="10"
+          android:hint="@string/sap_id"
+          android:inputType="numberDecimal"
+          android:textColor="#fff"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_teacher_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textColorHint="#bab5b5">
+
+        <EditText
+          android:id="@+id/passwordTeacherEditText"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:drawablePadding="10dp"
+          android:drawableStart="@drawable/ic_lock"
+          android:ems="10"
+          android:hint="@string/password"
+          android:inputType="textPassword"
+          android:textColor="#fff"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+      android:id="@+id/signUpTeacherButton"
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="60dp"
+      android:layout_marginBottom="20dp"
+      android:layout_gravity="center_horizontal"
+      android:clickable="true"
+      android:focusable="true"
+      android:foreground="?attr/selectableItemBackground"
+      app:cardBackgroundColor="@color/colorAccent"
+      app:cardCornerRadius="25dp"
+      app:cardElevation="8dp">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:drawableEnd="@drawable/ic_send"
+        android:gravity="center"
+        android:text="@string/sign_up_as_teacher"
+        android:textColor="#fff"
+        android:textSize="20sp"/>
+
+    </android.support.v7.widget.CardView>
+
+  </LinearLayout>
+
+</ScrollView>

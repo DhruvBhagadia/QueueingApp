@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/light_gray"
+  tools:context="com.djunicode.queuingapp.activity.TeacherProfileActivity">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:background="@drawable/profile_bg">
+
+    <ImageView
+      android:id="@+id/profileImageView"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="50dp"
+      android:background="@drawable/image_border"/>
+
+    <TextView
+      android:id="@+id/teacherNameTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="John Doe"
+      android:textStyle="bold"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="10dp"
+      android:textSize="20sp"
+      android:textColor="@android:color/background_dark"
+      android:fontFamily="monospace"/>
+
+  </LinearLayout>
+
+  <android.support.v7.widget.CardView
+    android:id="@+id/infoCardView"
+    android:layout_width="300dp"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="200dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      android:weightSum="3">
+
+      <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/submissionsTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="15"
+          android:layout_marginTop="20dp"
+          android:textSize="35sp"
+          android:textStyle="bold"
+          android:textColor="@color/colorPrimary"/>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="@string/submissions"
+          android:layout_marginTop="8dp"
+          android:textStyle="bold"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-smallcaps"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/subscribersTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="68"
+          android:layout_marginTop="20dp"
+          android:textSize="35sp"
+          android:textStyle="bold"
+          android:textColor="@color/colorPrimary"/>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="@string/subscribers"
+          android:layout_marginTop="8dp"
+          android:textStyle="bold"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-smallcaps"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/xyzTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="26"
+          android:layout_marginTop="20dp"
+          android:textSize="35sp"
+          android:textStyle="bold"
+          android:textColor="@color/colorPrimary"/>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="Something"
+          android:layout_marginTop="8dp"
+          android:textStyle="bold"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-smallcaps"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </android.support.v7.widget.CardView>
+
+  <TextView
+    android:id="@+id/timeTableTV"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/infoCardView"
+    android:layout_marginTop="10dp"
+    android:text="@string/time_table"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:fontFamily="sans-serif-smallcaps"/>
+
+  <ImageView
+    android:id="@+id/timeTableImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="150dp"
+    android:layout_below="@+id/timeTableTV"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:src="@drawable/timetable"
+    android:onClick="onClick"/>
+
+  <android.support.design.widget.FloatingActionButton
+    android:id="@+id/uploadFab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:fabSize="normal"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_below="@+id/timeTableImageView"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="15dp"
+    android:src="@drawable/ic_file_upload"
+    app:pressedTranslationZ="12dp"/>
+
+</RelativeLayout>

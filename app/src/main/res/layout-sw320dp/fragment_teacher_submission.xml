@@ -1,0 +1,342 @@
+<android.support.design.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/teacherCoordinatorLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.djunicode.queuingapp.fragment.TeacherSubmissionFragment">
+
+  <RelativeLayout
+    android:id="@+id/submissionRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+      android:id="@+id/ll1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:padding="10dp"
+      android:orientation="horizontal"
+      android:weightSum="2">
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-condensed"
+          android:text="@string/subject"
+          android:textSize="18sp"/>
+
+        <Spinner
+          android:id="@+id/subjectSpinner"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="sans-serif-condensed"
+          android:text="Batch"
+          android:textSize="18sp"/>
+
+        <Spinner
+          android:id="@+id/batchSpinner"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="20dp"
+      android:layout_below="@id/ll1"
+      android:background="@android:color/background_dark"/>
+
+    <android.support.v7.widget.CardView
+      android:id="@+id/fromTimePickerButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="40dp"
+      android:layout_below="@id/ll1"
+      android:layout_centerHorizontal="true"
+      app:cardBackgroundColor="@color/colorAccent"
+      app:cardCornerRadius="25dp">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:drawableEnd="@drawable/ic_time"
+        android:drawablePadding="10dp"
+        android:text="FROM"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+      android:id="@+id/restrictionTV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:layout_below="@id/fromTimePickerButton"
+      android:layout_centerHorizontal="true"
+      android:fontFamily="sans-serif-smallcaps"
+      android:text="@string/restriction"
+      android:textColor="@android:color/background_dark"
+      android:textSize="23sp"/>
+
+    <LinearLayout
+      android:id="@+id/ll3"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:layout_below="@+id/restrictionTV"
+      android:orientation="horizontal"
+      android:weightSum="2">
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+          android:id="@+id/studentsButton"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="@drawable/button_bg"
+          android:src="@drawable/ic_students"/>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/students"
+          android:textColor="@android:color/background_dark"
+          android:textSize="15sp"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+          android:id="@+id/timerButton"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="@drawable/button_bg"
+          android:src="@drawable/ic_timer"/>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/time"
+          android:textColor="@android:color/background_dark"
+          android:textSize="15sp"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </RelativeLayout>
+
+  <LinearLayout
+    android:id="@+id/fabLL1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="6dp"
+    android:layout_gravity="bottom|end"
+    android:padding="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:visibility="invisible">
+
+    <android.support.v7.widget.CardView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:cardElevation="4dp">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/cancel"
+        android:textColor="@android:color/background_dark"
+        android:typeface="normal"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+      android:id="@+id/cancelFab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      app:backgroundTint="@android:color/holo_red_dark"
+      android:clickable="true"
+      android:focusable="true"
+      android:src="@drawable/cancel_sub"
+      app:fabSize="mini"
+      app:pressedTranslationZ="8dp"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/fabLL2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="6dp"
+    android:layout_gravity="bottom|end"
+    android:padding="10dp"
+
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:visibility="invisible">
+
+    <android.support.v7.widget.CardView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:cardElevation="4dp">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/start"
+        android:textColor="@android:color/background_dark"
+        android:typeface="normal"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+      android:id="@+id/startFab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      app:backgroundTint="@android:color/holo_green_light"
+      android:clickable="true"
+      android:focusable="true"
+      android:src="@drawable/ic_done"
+      app:fabSize="mini"
+      app:pressedTranslationZ="8dp"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/fabLL3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="6dp"
+    android:layout_gravity="bottom|end"
+    android:padding="10dp"
+
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:visibility="invisible">
+
+    <android.support.v7.widget.CardView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:cardElevation="4dp">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/create_new"
+        android:textColor="@android:color/background_dark"
+        android:typeface="normal"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+      android:id="@+id/createNewFab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      app:backgroundTint="@android:color/holo_blue_dark"
+      android:clickable="true"
+      android:focusable="true"
+      android:src="@drawable/book_open_page"
+      app:fabSize="mini"
+      app:pressedTranslationZ="8dp"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/fabLL4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="6dp"
+    android:layout_gravity="bottom|end"
+    android:padding="10dp"
+
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:visibility="invisible">
+
+    <android.support.v7.widget.CardView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:cardElevation="4dp">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/edit"
+        android:textColor="@android:color/background_dark"
+        android:typeface="normal"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+      android:id="@+id/editFab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      app:backgroundTint="@android:color/holo_purple"
+      android:clickable="true"
+      android:focusable="true"
+      android:src="@drawable/ic_edit"
+      app:fabSize="mini"
+      app:pressedTranslationZ="8dp"/>
+
+  </LinearLayout>
+
+  <android.support.design.widget.FloatingActionButton
+    android:id="@+id/createFab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_gravity="bottom|end"
+    android:src="@drawable/ic_add"
+    app:fabSize="normal"/>
+
+</android.support.design.widget.CoordinatorLayout>
