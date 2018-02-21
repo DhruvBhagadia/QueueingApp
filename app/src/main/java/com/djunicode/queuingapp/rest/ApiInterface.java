@@ -1,6 +1,7 @@
 package com.djunicode.queuingapp.rest;
 
 import com.djunicode.queuingapp.model.LocationTeacher;
+import com.djunicode.queuingapp.model.Queue;
 import com.djunicode.queuingapp.model.Student;
 import com.djunicode.queuingapp.model.StudentForId;
 import retrofit2.Call;
@@ -41,4 +42,7 @@ public interface ApiInterface {
   @DELETE("queues/{id}/")
   Call<LocationTeacher> deleteTeacherLocation (@Path("id") int id);
 
+  @FormUrlEncoded
+  @PUT("queues/queue/{id}")
+  Call<Queue> studentJoiningTheQueue (@Path("id") int id, @Field("queueItems") String sapID);
 }
