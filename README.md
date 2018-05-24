@@ -47,4 +47,19 @@ When a student wants to join a particular queue, he/she can do it through the �
 ![image](https://user-images.githubusercontent.com/32220881/40469690-fb418bae-5f4e-11e8-986e-4ce44634ce90.png)
 ![image](https://user-images.githubusercontent.com/32220881/40469712-0fe2d90a-5f4f-11e8-916e-8ebb89f259d7.png)
 
- 
+ ### 8. Subscription	
+ The entire notification feature of this app is built upon the teachers which the students subscribe to. On selecting the particular subject followed by the name of the teacher through the ‘Subscription’ page, the student will get live notification updates about all queues which the teacher has scheduled as well as the teacher’s current location.
+
+![image](https://user-images.githubusercontent.com/32220881/40469829-5a145a62-5f4f-11e8-9af6-d85c06619598.png)
+
+### 9. Sight/Find teacher	
+Incase the teacher has not yet updated her location on the app, the students can themselves do so via the ‘Sight a Teacher’ tab. In order to prevent the students from providing false location by collecting the SAP ID of the student everytime he/she updates the location of a teacher. Thus if a student sights a particular teacher who has started with their submission work, they themselves can update the teacher’s location.
+
+![image](https://user-images.githubusercontent.com/32220881/40469882-83299c46-5f4f-11e8-906a-b44f83d9d35e.png)
+![image](https://user-images.githubusercontent.com/32220881/40469923-a56985be-5f4f-11e8-86e5-507a6cb5e293.png)
+
+## Future Scope/What we seek to do
+- Submission calendar
+- Notification updates about future queues
+- Pausing the queues
+- Blocking someone from queue by teachers
