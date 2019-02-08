@@ -115,9 +115,10 @@ public class StudentQueueActivity extends AppCompatActivity {
                 try{
                     int index = response.body().getIndex();
                     Log.e("Index", Integer.toString(index));
-                    subject = response.body().getSubject();
-                    startTime = response.body().getStartTime();
-                    endTime = response.body().getEndTime();
+                    subject = response.body().getData().getSubject();
+                    startTime = response.body().getData().getStartTime();
+                    endTime = response.body().getData().getEndTime();
+                    location = response.body().getData().getLocation();
                     Log.e("null logs", subject + " " + endTime + " " + startTime);
                     loadingIndicator.setVisibility(View.GONE);
                     queuePositionTextView.setVisibility(View.VISIBLE);
@@ -166,9 +167,9 @@ public class StudentQueueActivity extends AppCompatActivity {
 //              }
 //            }).setNegativeButton("No", null).show();
 
-        startTime = "1:00:00";
-        endTime = "3:00:00";
-        subject = "Test";
+//        startTime = "1:00:00";
+//        endTime = "3:00:00";
+//        subject = "Test";
         if (first){
             ActiveStudentQueues activeStudentQueues = new ActiveStudentQueues(queueId, startTime,
                     endTime, location, subject);
