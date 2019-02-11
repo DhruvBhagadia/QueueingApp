@@ -24,9 +24,9 @@ public class  MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    /*sp_student = getSharedPreferences("Student", MODE_PRIVATE);
+    sp_student = getSharedPreferences("Student", MODE_PRIVATE);
     sp_teacher = getSharedPreferences("Teacher", MODE_PRIVATE);
-//dlmsmkfnkfls
+
     if (sp_student.contains("student_sapid") && sp_student.contains("student_password")) {
       Intent in = new Intent(this, StudentScreenActivity.class);
       startActivity(in);
@@ -34,10 +34,9 @@ public class  MainActivity extends AppCompatActivity {
       if (sp_teacher.contains("teacher_sapid") && sp_teacher.contains("teacher_password")) {
         Toast.makeText(getApplicationContext(), "I got it!", Toast.LENGTH_SHORT).show();
         Intent in = new Intent(this, TeacherScreenActivity.class);
-        // StudentScreenActivity just for demo till the time teacher fragments are not ready
         startActivity(in);
       }
-    }*/
+    }
 
 
       signUpStudentCardView = (CardView) findViewById(R.id.signUpStudentCardView);
