@@ -7,15 +7,25 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.djunicode.queuingapp.R;
+import com.djunicode.queuingapp.adapter.RemoveStudentAdapter;
+import com.djunicode.queuingapp.customClasses.RecyclerItemTouchHelper;
+import com.djunicode.queuingapp.customClasses.RemoveStudentTouchHelper;
 import com.djunicode.queuingapp.data.QueuesDbHelper;
 import com.djunicode.queuingapp.model.StudentQueue;
 import com.djunicode.queuingapp.model.TeacherCreateNew;
@@ -27,13 +37,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class StudentListActivity extends AppCompatActivity {
+public class StudentListActivity extends AppCompatActivity implements
+        RemoveStudentTouchHelper.RecyclerItemTouchHelperListener{
 
-  private ListView studentsList;
+  private RecyclerView studentsRecyclerView;
   private FloatingActionButton cancelFab;
   private Handler handler;
   private ArrayList<String> queueList;
-  private ArrayAdapter<String> adapter;
+  private RemoveStudentAdapter adapter;
   private ApiInterface apiInterface;
   private ProgressBar loadingIndicator;
   private TextView emptyQueueTextView;
@@ -46,7 +57,7 @@ public class StudentListActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_student_list);
 
-    studentsList = (ListView) findViewById(R.id.studentsList);
+    studentsRecyclerView = (RecyclerView) findViewById(R.id.studentsRecyclerView);
     cancelFab = (FloatingActionButton) findViewById(R.id.cancelSubFab);
     loadingIndicator = (ProgressBar) findViewById(R.id.loadingIndicator);
     emptyQueueTextView = (TextView) findViewById(R.id.emptyQueueTextView);
@@ -58,6 +69,19 @@ public class StudentListActivity extends AppCompatActivity {
 
     loadingIndicator.setVisibility(View.VISIBLE);
     startRepeatingTask();
+
+    adapter = new RemoveStudentAdapter(StudentListActivity.this, queueList);
+
+    studentsRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+    studentsRecyclerView.setItemAnimator(new DefaultItemAnimator());
+    studentsRecyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(),
+            DividerItemDecoration.VERTICAL));
+    studentsRecyclerView.setAdapter(adapter);
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new RemoveStudentTouchHelper(0,
+            ItemTouchHelper.LEFT, this);
+    new ItemTouchHelper(simpleCallback).attachToRecyclerView(studentsRecyclerView);
 
     cancelFab.setOnClickListener(new OnClickListener() {
       @Override
@@ -76,6 +100,14 @@ public class StudentListActivity extends AppCompatActivity {
                 }).setNegativeButton("No", null).show();
       }
     });
+
+  }
+
+  @Override
+  public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+    if (viewHolder instanceof RemoveStudentAdapter.MyViewHolder) {
+      removeStudent(viewHolder.getAdapterPosition());
+    }
   }
 
   private Runnable statusChecker = new Runnable() {
@@ -108,10 +140,10 @@ public class StudentListActivity extends AppCompatActivity {
           emptyQueueTextView.setVisibility(View.GONE);
         }
         Log.e("QueueItems", queueList.toString());
-        adapter = new ArrayAdapter<String>(StudentListActivity.this, R.layout.list_row, queueList);
-        studentsList.setAdapter(adapter);
+        adapter = new RemoveStudentAdapter(StudentListActivity.this, queueList);
+        studentsRecyclerView.setAdapter(adapter);
         loadingIndicator.setVisibility(View.GONE);
-        studentsList.setVisibility(View.VISIBLE);
+        studentsRecyclerView.setVisibility(View.VISIBLE);
       }
 
       @Override
@@ -150,6 +182,23 @@ public class StudentListActivity extends AppCompatActivity {
     });
   }
 
+  void removeStudent(final int pos){
+
+    Call<StudentQueue> call = apiInterface.deleteStudentFromQueue(queueId, queueList.get(pos));
+                call.enqueue(new Callback<StudentQueue>() {
+                  @Override
+                  public void onResponse(Call<StudentQueue> call, Response<StudentQueue> response) {
+                    Toast.makeText(StudentListActivity.this, "Removed from the queue!", Toast.LENGTH_SHORT).show();
+                  }
+
+                  @Override
+                  public void onFailure(Call<StudentQueue> call, Throwable t) {
+
+                  }
+                });
+     adapter.removeItem(pos);
+  }
+
   @Override
   public void onBackPressed() {
     new AlertDialog.Builder(this)
@@ -165,4 +214,5 @@ public class StudentListActivity extends AppCompatActivity {
               }
             }).setNegativeButton("No", null).show();
   }
+
 }

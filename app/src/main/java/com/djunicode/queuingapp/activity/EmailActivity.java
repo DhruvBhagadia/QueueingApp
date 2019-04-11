@@ -80,7 +80,7 @@ public class EmailActivity extends AppCompatActivity {
 
                 Call<UserEmailVerify> call = apiInterface.sendEmail(getSaltString(), email, "demopass");
                 if (user.equals("teacher")) {
-                    if (email.contains("@djsce.ac.in")) {
+//                    if (email.contains("@djsce.ac.in")) {
             /*call.enqueue(new Callback<UserEmailVerify>() {
               @Override
               public void onResponse(@NonNull Call<UserEmailVerify> call,
@@ -99,9 +99,9 @@ public class EmailActivity extends AppCompatActivity {
                 Log.e("Error:", t.getMessage());
               }
             });*/
-                    } else {
-                        Log.e("Error: ", "Invalid teacher email");
-                    }
+//                    } else {
+//                        Log.e("Error: ", "Invalid teacher email");
+//                    }
                     call.enqueue(new Callback<UserEmailVerify>() {
                         @Override
                         public void onResponse(@NonNull Call<UserEmailVerify> call,
@@ -144,6 +144,8 @@ public class EmailActivity extends AppCompatActivity {
                                 verifyEditText.setAlpha(1.0f);
                             } catch (Exception e) {
                                 Toast.makeText(EmailActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Log.e("StEx", e.getMessage());
+                                progressDialog.dismiss();
                             }
                         }
 

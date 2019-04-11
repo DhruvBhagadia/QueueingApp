@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/text1"
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:textAppearance="?android:attr/textAppearanceListItem"
-    android:paddingLeft="6dip"
-    android:paddingRight="6dip"
-    android:gravity="center"/>
+    android:layout_height="?android:attr/listPreferredItemHeight">
+
+    <RelativeLayout
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD0000">
+
+        <ImageView
+            android:id="@+id/deleteIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_clear_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/deleteIcon"
+            android:text="@string/remove"
+            android:textColor="#fff"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:fontFamily="sans-serif-smallcaps"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/foregroundView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/serialNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/sapID"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:paddingLeft="6dip"
+            android:paddingRight="6dip"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+</FrameLayout>
+
+
+
