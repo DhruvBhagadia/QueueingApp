@@ -32,8 +32,8 @@ import retrofit2.Response;
 
 public class StudentQueueActivity extends AppCompatActivity {
 
-    private TextView queuePositionTextView, positionTV;
-    private CardView doneButton, queueNumber;
+    private TextView queuePositionTextView, positionTV, removedFromQueueTextView;
+    private CardView doneButton, queueNumber, removedFromQueue;
     private Animation upToDown, downToUp, scale;
     private Handler handler;
     private ApiInterface apiInterface;
@@ -50,9 +50,11 @@ public class StudentQueueActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_queue);
 
         queuePositionTextView = (TextView) findViewById(R.id.queuePositionTextView);
+        removedFromQueueTextView = (TextView) findViewById(R.id.removedFromQueueTextView);
         positionTV = (TextView) findViewById(R.id.positionTV);
         doneButton = (CardView) findViewById(R.id.doneButton);
         queueNumber = (CardView) findViewById(R.id.queueNumberCardView);
+        removedFromQueue = (CardView) findViewById(R.id.removedFromQueueCardView);
         loadingIndicator = (ProgressBar) findViewById(R.id.loadingIndicator);
         handler = new Handler();
         dbHelper = new ActiveQueuesDbHelper(this);
@@ -122,7 +124,13 @@ public class StudentQueueActivity extends AppCompatActivity {
                     Log.e("null logs", subject + " " + endTime + " " + startTime);
                     loadingIndicator.setVisibility(View.GONE);
                     queuePositionTextView.setVisibility(View.VISIBLE);
-                    queuePositionTextView.setText(Integer.toString(index));
+                    if(index == 0) {
+                        queueNumber.setVisibility(View.INVISIBLE);
+                        removedFromQueue.setVisibility(View.VISIBLE);
+                        removedFromQueueTextView.setText("You have been removed from the Queue :(");
+                    }
+                    else
+                        queuePositionTextView.setText(Integer.toString(index));
                 } catch (Exception e) {
                     e.printStackTrace();
 
