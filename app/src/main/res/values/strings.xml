@@ -248,6 +248,7 @@
     <string name="started">Started : </string>
     <string name="no_queues_found">No Queues found!</string>
     <string name="active_queues">Active Queues</string>
+    <string name="remove">Remove</string>
 
 </resources>
 

@@ -44,8 +44,8 @@
         android:text="@string/empty_queue"
         android:visibility="invisible"/>
 
-    <ListView
-      android:id="@+id/studentsList"
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/studentsRecyclerView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:visibility="invisible"/>
