@@ -16,6 +16,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        buildTypes.each {
+            it.buildConfigField 'String', 'API_TOKEN', API_TOKEN
+            it.buildConfigField 'String', 'API_SECRET_KEY', API_SECRET_KEY
+        }
     }
     lintOptions {
         abortOnError true

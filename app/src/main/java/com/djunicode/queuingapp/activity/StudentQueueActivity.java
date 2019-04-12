@@ -32,8 +32,8 @@ import retrofit2.Response;
 
 public class StudentQueueActivity extends AppCompatActivity {
 
-    private TextView queuePositionTextView, positionTV, removedFromQueueTextView;
-    private CardView doneButton, queueNumber, removedFromQueue;
+    private TextView queuePositionTextView, positionTV, removedFromQueueTextView, queueClosedTextView;
+    private CardView doneButton, queueNumber, removedFromQueue, queueClosed;
     private Animation upToDown, downToUp, scale;
     private Handler handler;
     private ApiInterface apiInterface;
@@ -51,10 +51,12 @@ public class StudentQueueActivity extends AppCompatActivity {
 
         queuePositionTextView = (TextView) findViewById(R.id.queuePositionTextView);
         removedFromQueueTextView = (TextView) findViewById(R.id.removedFromQueueTextView);
+        queueClosedTextView = (TextView) findViewById(R.id.queueClosedTextView);
         positionTV = (TextView) findViewById(R.id.positionTV);
         doneButton = (CardView) findViewById(R.id.doneButton);
         queueNumber = (CardView) findViewById(R.id.queueNumberCardView);
         removedFromQueue = (CardView) findViewById(R.id.removedFromQueueCardView);
+        queueClosed = (CardView) findViewById(R.id.queueClosedCardView);
         loadingIndicator = (ProgressBar) findViewById(R.id.loadingIndicator);
         handler = new Handler();
         dbHelper = new ActiveQueuesDbHelper(this);
@@ -133,7 +135,9 @@ public class StudentQueueActivity extends AppCompatActivity {
                         queuePositionTextView.setText(Integer.toString(index));
                 } catch (Exception e) {
                     e.printStackTrace();
-
+                    queueNumber.setVisibility(View.INVISIBLE);
+                    queueClosed.setVisibility(View.VISIBLE);
+                    queueClosedTextView.setText("The submission is ended by the teacher");
                 }
             }
 
