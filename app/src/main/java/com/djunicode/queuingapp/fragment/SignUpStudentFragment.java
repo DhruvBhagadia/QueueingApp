@@ -191,6 +191,7 @@ public class SignUpStudentFragment extends Fragment {
                     Log.e("Firebase RegId", preferences.getString("regId", "empty"));
                     String reg_id = preferences.getString("regId", "empty");
                     int studentID = preferences.getInt("studentID", 0);
+                    Log.e("StudentID:", Integer.toString(studentID));
 //          Log.i("id", Integer.toString(id));
                     Call<Student> call = apiInterface
                             .createStudentAccount(studentID, username, SAPId, department, year, batch, reg_id);
@@ -215,6 +216,8 @@ public class SignUpStudentFragment extends Fragment {
                             } else {
                                 Toast.makeText(getActivity(), "SAPId already exist, Try Logging in instead!",
                                         Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+
                 /*session.createLoginSession(sapIDEditText.getText().toString(),
                     passwordEditText.getText().toString(), username);
                 Intent intent = new Intent(getActivity(), StudentScreenActivity.class);
