@@ -79,6 +79,7 @@ public class SubscriptionsFragment extends Fragment {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         resources = getResources();
 
+        subscriptionsFab.setEnabled(false);
         subjectSpinner.setEnabled(false);
         subjectSpinner.setAlpha(0.4f);
 
@@ -136,8 +137,6 @@ public class SubscriptionsFragment extends Fragment {
 
             @Override
             public void selectedStrings(List<String> selectedSubjects) {
-                teacherSpinner.setEnabled(true);
-                teacherSpinner.setAlpha(1.0f);
                 //Toast.makeText(getContext(), "Subjects:" + selectedSubjects.toString(), Toast.LENGTH_LONG)
                 //  .show();
                 teachers = new ArrayList<>();
@@ -155,6 +154,13 @@ public class SubscriptionsFragment extends Fragment {
                                     teachers.clear();
                                     teachers.addAll(teachersSet);
                                     teacherSpinner.setItems(teachers);
+                                }
+                                if(teacherSpinner.getAdapter().getCount() != 0){
+                                    teacherSpinner.setEnabled(true);
+                                    teacherSpinner.setAlpha(1.0f);
+                                } else {
+                                    teacherSpinner.setEnabled(false);
+                                    teacherSpinner.setAlpha(0.4f);
                                 }
                             } catch (Exception e) {
                                 Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -179,6 +185,7 @@ public class SubscriptionsFragment extends Fragment {
             @Override
             public void selectedStrings(List<String> strings) {
                 subscriptionList = strings;
+                subscriptionsFab.setEnabled(true);
                 //  Toast.makeText(getContext(), "Teachers:" + strings.toString(), Toast.LENGTH_LONG).show();
             }
         });
