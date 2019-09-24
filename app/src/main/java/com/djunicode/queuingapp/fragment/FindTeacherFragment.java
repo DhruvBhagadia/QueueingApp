@@ -82,6 +82,8 @@ public class FindTeacherFragment extends Fragment {
 
     resources = getResources();
 
+    findTeacherButton.setEnabled(false);
+
     ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
         android.R.layout.simple_spinner_dropdown_item, array);
 
@@ -110,6 +112,9 @@ public class FindTeacherFragment extends Fragment {
         if (position != 0) {
           subjectSpinner.setEnabled(true);
           subjectSpinner.setAlpha(1.0f);
+          teacherSpinner.setEnabled(false);
+          teacherSpinner.setAlpha(0.4f);
+          findTeacherButton.setEnabled(false);
         }
         switch (position) {
           case 1:
@@ -173,12 +178,19 @@ public class FindTeacherFragment extends Fragment {
                 Response<TeacherListModel> response) {
               try {
                 list = response.body().getTeachers();
+                Log.e("List", list.toString());
               } catch (Exception e) {
                 Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
               }
               teacher_adapter = new ArrayAdapter<String>(getContext(),
                   android.R.layout.simple_spinner_dropdown_item, list);
               teacherSpinner.setAdapter(teacher_adapter);
+
+              Log.e("teacherSpinnerAdapter", Integer.toString(teacherSpinner.getAdapter().getCount()));
+              if(teacherSpinner.getAdapter().getCount() != 0) {
+                teacherSpinner.setEnabled(true);
+                teacherSpinner.setAlpha(1.0f);
+              }
             }
 
             @Override
@@ -186,8 +198,7 @@ public class FindTeacherFragment extends Fragment {
 
             }
           });
-          teacherSpinner.setEnabled(true);
-          teacherSpinner.setAlpha(1.0f);
+
           Toast.makeText(getContext(), parent.getItemAtPosition(position).toString(),
               Toast.LENGTH_SHORT).show();
         }
@@ -199,10 +210,22 @@ public class FindTeacherFragment extends Fragment {
       }
     });
 
+    teacherSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+      @Override
+      public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        teacher_selected = adapterView.getItemAtPosition(i).toString();
+        findTeacherButton.setEnabled(true);
+      }
+
+      @Override
+      public void onNothingSelected(AdapterView<?> adapterView) {
+
+      }
+    });
+
     findTeacherButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        teacher_selected = teacherSpinner.getSelectedItem().toString();
         Call<TeacherModel> call1 = apiInterface.getIdForTeacherFromName(teacher_selected);
         call1.enqueue(new Callback<TeacherModel>() {
           @Override
@@ -228,7 +251,7 @@ public class FindTeacherFragment extends Fragment {
           }
         });
 
-        teacherLocation = "Prof. " + teacherSpinner.getSelectedItem().toString() +
+        teacherLocation = "Prof. " + teacher_selected +
             " " + "Department: " + "Waiting for Teacher, please try again";
 //          AlertDialog.Builder builder = new Builder(getActivity());
 //          builder.setMessage(teacherLocation)
@@ -254,15 +277,12 @@ public class FindTeacherFragment extends Fragment {
     call.enqueue(new Callback<LocationTeacher>() {
       @Override
       public void onResponse(Call<LocationTeacher> call, Response<LocationTeacher> response) {
-        Log.e("Dhruv", "inside onResponse");
         if (response.isSuccessful()) {
           try {
-            Log.e("Dhruv", "Successfull");
-            Log.e("Dhruv", response.body().getDepartment());
             dept = response.body().getDepartment();
             floor = response.body().getFloor().toString();
             room = response.body().getRoom();
-            teacherLocation = "Prof. " + teacherSpinner.getSelectedItem().toString() +
+            teacherLocation = "Prof. " + teacher_selected +
                 " was last seen in Department: " + dept + " at Floor: " + floor + " in Room: "
                 + room;
             AlertDialog.Builder builder = new Builder(getActivity());
